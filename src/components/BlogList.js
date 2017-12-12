@@ -2,28 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Blog from './Blog';
 
-const filtered = (Blogs, filter) => {
-  switch (filter) {
-    case 'All':
-      return Blogs;
+const filtered = (blogs, activeFilter) => {
+  switch (activeFilter) {
     case 'Active':
-      return Blogs.filter( t => !t.complete )
+      return blogs.filter( b => !b.complete )
     case 'Completed':
-      return Blogs.filter( t => t.complete )
+      return blogs.filter( b => b.complete )
+    default:
+      return blogs;
   }
 }
 
 const BlogList = ({ blogs, filter }) => (
   <ul>
-    { filtered(blogs, filter).map( (t) => {
-        return ( <Blog key={t.id} {...t} /> )
-      })
-    }
+    { filtered(blogs, filter).map( b => <Blog key={b.id} {...b} /> )}
   </ul>
 )
 
 const mapStateToProps = (state) => {
-  return { Blogs: state.Blogs, filter: state.filter }
+  return { blogs: state.blogs, filter: state.filter }
 }
 
-export default connect(mapStateToProps)(BlogList)
+export default connect(mapStateToProps)(BlogList);

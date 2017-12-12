@@ -1,9 +1,9 @@
-const nextId = (state = 0, action) => {
+const nextId = ( state = 1, action ) => {
     switch (action.type) {
       case 'INC_ID':
-        return ++state
+        return state + 1;
       default:
-        return state
+        return state;
     }
   }
   

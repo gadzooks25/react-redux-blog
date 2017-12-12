@@ -1,18 +1,17 @@
-const Blogs = ( state = [], action ) => {
-    switch(action.type) {
-      case 'Blogs':
-        return action.Blogs
-      case 'ADD_Blog':
-        return [action.Blog, ...state];
-      case 'TOGGLE_Blog':
-        return state.map( Blog => {
-          if (Blog.id === action.id)
-            return {...Blog, complete: !Blog.complete}
-          return Blog
+const blogs = ( state = [], action ) => {
+    switch (action.type) {
+      case 'ADD_BLOG':
+        return [action.blog, ...state]
+      case 'TOGGLE_BLOG':
+        return state.map( blog => {
+          if (blog.id === action.id)
+            return { ...blog, complete: !blog.complete }
+          return blog
         })
       default:
-        return state
+        return state;
     }
   }
   
-  export default Blogs;
+  export default blogs;
+  
