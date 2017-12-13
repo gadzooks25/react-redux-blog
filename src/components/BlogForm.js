@@ -16,6 +16,7 @@ class BlogForm extends React.Component {
     this.setState({ name: '' })
   }
 
+  
   handleChange = (e) => this.setState({ name: e.target.value })
 
   render() {

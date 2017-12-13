@@ -4,9 +4,9 @@ import Blog from './Blog';
 
 const filtered = (blogs, activeFilter) => {
   switch (activeFilter) {
-    case 'Active':
+    case 'Needs':
       return blogs.filter( b => !b.complete )
-    case 'Completed':
+    case 'Check':
       return blogs.filter( b => b.complete )
     default:
       return blogs;

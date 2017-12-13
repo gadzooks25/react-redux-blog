@@ -5,9 +5,9 @@ const Footer = () => (
   <div>
     <FilterLink>All</FilterLink>
     {' '}
-    <FilterLink>Completed</FilterLink>
+    <FilterLink>Check</FilterLink>
     {' '}
-    <FilterLink>Active</FilterLink>
+    <FilterLink>Still-Needed</FilterLink>
   </div>
 )
 
